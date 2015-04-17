@@ -30,14 +30,16 @@ endfunction
 
 set nu!
 set shiftwidth=4
-colorscheme desert
 syntax enable
+colorscheme dejavu
+set bg=dark
 syntax on
 set tags =tags;
 set autochdir
 let Tlist_Show_One_File=1 
 let Tlist_Exit_OnlyWindow=1
-let g:winManagerWindowLayout='FileExplorer|TagList' 
+let Tlist_WinHeight=1
+let g:winManagerWindowLayout='FileExplorer|TagList'
 noremap <silent> wm :WMToggle<cr>
 nmap <silent> <F9> :WMToggle<cr>
 set guifont=Consolas:h14
