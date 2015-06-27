@@ -28,20 +28,24 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
+set ts=4
+set expandtab
 set nu!
 set shiftwidth=4
 syntax enable
-colorscheme dejavu
+colorscheme darkburn 
 set bg=dark
 syntax on
-set tags =tags;
+set tags=tags;
 set autochdir
 let Tlist_Show_One_File=1 
 let Tlist_Exit_OnlyWindow=1
 let Tlist_WinHeight=1
 let g:winManagerWindowLayout='FileExplorer|TagList'
 noremap <silent> wm :WMToggle<cr>
-nmap <silent> <F9> :WMToggle<cr>
+noremap <silent> tr :NERDTreeToggle<cr>
+"noremap <silent> ww :<C-R>ww<cr>
+"noremap <silent> <F9> :WMToggle<cr>
 set guifont=Consolas:h14
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -67,3 +71,5 @@ nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+set runtimepath+=~/.vim/bundle/ack.vim-master/autoload
