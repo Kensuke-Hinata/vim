@@ -3,6 +3,25 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
+autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
+autocmd FileType sass,scss,css,styl setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+
+" syntax support
+autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
+" js
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
+let g:rbpt_max = 16
+autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
+
+set cursorline cursorcolumn
 set diffexpr=MyDiff()
 function MyDiff()
   let opt = '-a --binary '
@@ -46,8 +65,8 @@ noremap <silent> wm :WMToggle<cr>
 noremap <silent> tr :NERDTreeToggle<cr>
 "noremap <silent> ww :<C-R>ww<cr>
 "noremap <silent> <F9> :WMToggle<cr>
-set guifont=Consolas:h14
-
+"set guifont=Consolas:h100
+set gfn=Monaco:h20
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cscope setting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -72,4 +91,56 @@ nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
+map <F9> <C-W-W><CR>
+"map <C-H> :%s/
 set runtimepath+=~/.vim/bundle/ack.vim-master/autoload
+
+"vundle begin
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+let g:mapleader=','
+let g:user_emmet_expandabbr_key='<C-J>'
+map<Leader>w <C-w><C-w>
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" vundle end
+"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          Plugins                         "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable plugins
+try
+    source ~/.vim/plugins.vim
+    source ~/.vim/plugins_config.vim
+catch
+endtry
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Easier moving between windows
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+nnoremap <leader>q :set wrap! wrap?<cr>
