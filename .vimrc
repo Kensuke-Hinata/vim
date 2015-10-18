@@ -144,3 +144,4 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 nnoremap <leader>q :set wrap! wrap?<cr>
+nnoremap <c-v> <c-v>
