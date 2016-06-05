@@ -52,6 +52,7 @@ set expandtab
 set nu!
 set shiftwidth=4
 syntax enable
+set t_Co=256
 colorscheme darkburn 
 set bg=dark
 syntax on
