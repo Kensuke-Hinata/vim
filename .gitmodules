@@ -1,4 +1,0 @@
-[submodule "bundle/pretty-vim-python"]                                               
-  path = bundle/pretty-vim-python                                                    
-  url = https://github.com/pfdevilliers/pretty-vim-python
-  ignore = dirty
