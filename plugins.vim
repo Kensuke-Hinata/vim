@@ -56,6 +56,7 @@ Bundle 'bling/vim-airline'
 Bundle 'plasticboy/vim-markdown'
 
 Bundle 'pfdevilliers/pretty-vim-python'
+Bundle 'indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
