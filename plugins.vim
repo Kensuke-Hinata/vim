@@ -11,7 +11,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 Bundle 'gmarik/Vundle.vim'
-Bundle "waveded/vim-stylus"
+"Bundle "waveded/vim-stylus"
 Bundle 'junegunn/seoul256.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
@@ -47,7 +47,7 @@ Bundle 'othree/html5.vim'
 Bundle 'elzr/vim-json'
 
 "Bundle 'marijnh/tern_for_vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 " To use in col control.
 Bundle 'godlygeek/tabular'
@@ -55,6 +55,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
 Bundle 'plasticboy/vim-markdown'
 
+Bundle 'pfdevilliers/pretty-vim-python'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

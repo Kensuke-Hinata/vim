@@ -62,8 +62,12 @@ let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_WinHeight=1
 let g:winManagerWindowLayout='FileExplorer|TagList'
-noremap <silent> wm :WMToggle<cr>
+
+"NERDTree
 noremap <silent> tr :NERDTreeToggle<cr>
+let g:NERDTreeIgnore=[]
+
+noremap <silent> wm :WMToggle<cr>
 "noremap <silent> ww :<C-R>ww<cr>
 "noremap <silent> <F9> :WMToggle<cr>
 "set guifont=Consolas:h100
