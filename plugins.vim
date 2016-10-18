@@ -19,7 +19,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'honza/vim-snippets'
-Bundle 'SirVer/ultisnips'
+"Bundle 'SirVer/ultisnips'
 
 "Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'scrooloose/syntastic'
@@ -33,6 +33,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-surround'
 Bundle 'rking/ag.vim'
 
+Bundle 'grep.vim'
 
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'jelera/vim-javascript-syntax'
@@ -57,6 +58,8 @@ Bundle 'plasticboy/vim-markdown'
 
 Bundle 'pfdevilliers/pretty-vim-python'
 Bundle 'indentpython.vim'
+
+Plugin 'chemzqm/wxapp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
