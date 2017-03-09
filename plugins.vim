@@ -19,7 +19,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'honza/vim-snippets'
-"Bundle 'SirVer/ultisnips'
+Bundle 'SirVer/ultisnips'
 
 "Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'scrooloose/syntastic'
@@ -48,7 +48,11 @@ Bundle 'othree/html5.vim'
 Bundle 'elzr/vim-json'
 
 "Bundle 'marijnh/tern_for_vim'
+"
 "Bundle 'Valloric/YouCompleteMe'
+Plugin 'valloric/youcompleteme'
+
+Plugin 'brookhong/cscope.vim'
 
 " To use in col control.
 Bundle 'godlygeek/tabular'
@@ -60,6 +64,16 @@ Bundle 'pfdevilliers/pretty-vim-python'
 Bundle 'indentpython.vim'
 
 Plugin 'chemzqm/wxapp.vim'
+
+"Plugin 'chase/vim-ansible-yaml'
+"Plugin 'stephpy/vim-yaml'
+Plugin 'avakhov/vim-yaml'
+
+Plugin 'mxw/vim-jsx'
+Plugin 'jaxbot/syntastic-react'
+
+"for LaTeX
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
