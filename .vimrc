@@ -8,8 +8,8 @@ autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=12
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd FileType sass,scss,css,styl setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType html,htmldjango,xhtml,haml,wxml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
+autocmd FileType sass,scss,css,styl,wxss setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
 " syntax support
 autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
@@ -21,6 +21,7 @@ let g:html_indent_style1 = "inc"
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
+set scrolloff=0
 set cursorline cursorcolumn
 set diffexpr=MyDiff()
 function MyDiff()
@@ -75,17 +76,17 @@ set gfn=Monaco:h20
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cscope setting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"if has("cscope")
-  "set csprg=/usr/bin/cscope
-  "set csto=1
-  "set cst
-  "set nocsverb
-  " add any database in current directory
-  "if filereadable("cscope.out")
-      "cs add cscope.out
-  "endif
-  "set csverb
-"endif
+if has("cscope")
+  set csprg=/usr/local/bin/cscope
+  set csto=1
+  set cst
+  set nocsverb
+   "add any database in current directory
+  if filereadable("cscope.out")
+      cs add cscope.out
+  endif
+  set csverb
+endif
 
 nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
@@ -115,7 +116,32 @@ filetype plugin indent on    " required
 
 let g:mapleader=','
 let g:user_emmet_expandabbr_key='<C-J>'
+
 map<Leader>w <C-w><C-w>
+
+" YouCompleteMe
+" close the preview
+set completeopt-=preview
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" ctags generate tag files
+let g:ycm_collect_identifiers_from_tag_files=1 
+" ctrl + space => alt+ (CLang)
+let g:ycm_key_invoke_completion='<M-;>'
+" complete
+let g:ycm_seed_identifiers_with_syntax=1
+" prevent from showing the information about checking the ycm_extra_conf file 
+let g:ycm_confirm_extra_conf=0 
+" regenerate matching items
+let g:ycm_cache_omnifunc=0
+" complete in comment
+let g:ycm_complete_in_comments=1
+" complete after typing the first character
+let g:ycm_min_num_of_chars_for_completion=1 
+" error hint
+let g:ycm_error_symbol='>>' 
+" Warning hint
+let g:ycm_warning_symbol='>*'
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -144,9 +170,11 @@ endtry
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Easier moving between windows
+ 
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 nnoremap <leader>q :set wrap! wrap?<cr>
+nnoremap <leader>hl :nohl<cr>
 nnoremap <c-v> <c-v>
