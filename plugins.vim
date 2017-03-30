@@ -75,6 +75,13 @@ Plugin 'jaxbot/syntastic-react'
 "for LaTeX
 Plugin 'lervag/vimtex'
 
+"for ctags
+Plugin 'ctags.vim'
+"Plugin 'szw/vim-tags'
+
+"for elm
+Plugin 'lambdatoast/elm.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
