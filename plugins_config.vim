@@ -1,8 +1,6 @@
 " Automatically source the plugins_config.vim when it is saved
 autocmd! bufwritepost plugins_config.vim source %
 
-let mapleader=","
-
 " Tabbar
 nmap <F8> :TagbarToggle<CR>
 
@@ -55,8 +53,17 @@ let NERDTreeIgnore=['.o$[[file]]', '.class$[[file]]', '.git$[[dir]]']
 
 
 " Syntastic settings
-autocmd FileType tex let g:syntastic_quiet_warnings=1
+"autocmd FileType tex let g:syntastic_quiet_warnings=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+let g:syntastic_python_checkers=['pyflakes']
+"let g:syntastic_python_checkers=['pylint']
+"let g:syntastic_python_pylint_args='--disable=C, F, I, R, W'
 
 " javascript-liberay-syntax setting
 let g:used_javascript_libs = 'jquery, underscore, backbone, requirejs'
@@ -75,10 +82,14 @@ let g:UltiSnipsSnippetsDir = '~/.vim/bundle/ultisnips/UltiSnips'
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
 let g:ycm_use_ultisnips_completer = 1 "提示UltiSnips
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <silent> <leader>gc :YcmCompleter GoToDeclaration<CR>
+nnoremap <silent> <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <silent> <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <F4> :YcmDiags<CR>
+
+" for pymode
+let g:pymode_rope=0
+let g:pymode_lint_on_fly=0
 
 " For snippet
 let g:UltiSnipsExpandTrigger       = "<tab>"
