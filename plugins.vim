@@ -22,7 +22,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'SirVer/ultisnips'
 
 "Bundle 'zhaocai/GoldenView.Vim'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'yonchu/accelerated-smooth-scroll'
@@ -57,7 +57,8 @@ Bundle 'elzr/vim-json'
 "
 Plugin 'valloric/youcompleteme'
 
-"Plugin 'brookhong/cscope.vim'
+Plugin 'brookhong/cscope.vim'
+"Plugin 'gtags.vim'
 
 " To use in col control.
 Bundle 'godlygeek/tabular'
@@ -87,7 +88,7 @@ Plugin 'latex-box-team/latex-box'
 
 "for ctags
 "Plugin 'ctags.vim'
-Plugin 'craigemery/vim-autotag'
+"Plugin 'craigemery/vim-autotag'
 "Plugin 'szw/vim-tags'
 
 "for elm
@@ -126,6 +127,15 @@ Plugin 'derekwyatt/vim-scala'
 
 " for docker
 Plugin 'ekalinin/dockerfile.vim'
+
+" for thrift
+Plugin 'solarnz/thrift.vim'
+
+" for antlr
+Plugin 'jrozner/vim-antlr'
+
+" for yml
+Plugin 'henrik/vim-yaml-flattener'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -236,6 +236,16 @@ let g:haskell_indent_case_alternative = 2
 
 let g:cabal_indent_section = 2
 
+"for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "for Python
 nnoremap <leader>pyl :PymodeLint<cr>
 nnoremap <leader>pyf :PymodeLintAuto<cr>
