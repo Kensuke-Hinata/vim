@@ -125,17 +125,37 @@ Plugin 'neovimhaskell/haskell-vim'
 " for scala
 Plugin 'derekwyatt/vim-scala'
 
+" for typescript
+Plugin 'leafgarland/typescript-vim'
+
 " for docker
 Plugin 'ekalinin/dockerfile.vim'
 
 " for thrift
 Plugin 'solarnz/thrift.vim'
 
-" for antlr
+" for ANTLR
 Plugin 'jrozner/vim-antlr'
 
 " for yml
 Plugin 'henrik/vim-yaml-flattener'
+
+Plugin 'zxqfl/tabnine-vim'
+
+" for kotlin
+Plugin 'udalov/kotlin-vim'
+
+" for LLVM
+Plugin 'lyuts/vim-rtags'
+
+" for babel
+Plugin 'jbgutierrez/vim-babel'
+
+" for vue
+Plugin 'posva/vim-vue'
+
+" for graphviz
+Plugin 'wannesm/wmgraphviz.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
