@@ -80,31 +80,6 @@ au GUIenter * winpos 0 0 | set lines=999 columns=9999
 "noremap <silent> <F9> :WMToggle<cr>
 "set guifont=Consolas:h100
 set gfn=Monaco:h18
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cscope setting
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("cscope")
-  set csprg=/usr/local/bin/cscope
-  set csto=1
-  set cst
-  set nocsverb
-   "add any database in current directory
-  if filereadable("cscope.out")
-      cs add cscope.out
-  endif
-  set csverb
-endif
-
-set cscopequickfix=c-,d-,e-,g-,i-,s-,t-
-
-nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 map <F9> <C-W-W><CR>
 "map <C-H> :%s/
@@ -134,9 +109,35 @@ let g:autocatExcludeSuffixes='sh.js.txt.xml.tml.text'
 "let g:autotagCtagsCmd="ctags -R"
 let g:vim_tags_auto_generate=1
 let g:autotagmaxTagsFileSize=1024 * 1024 * 7 * 100
-set autochdir
+"set autochdir
 set tags+=tags;
 set path=./**
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cscope setting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("cscope")
+  set csprg=/usr/local/bin/cscope
+  set csto=1
+  set cst
+  set nocsverb
+   "add any database in current directory
+  if filereadable("cscope.out")
+      cs add cscope.out
+  endif
+  set csverb
+endif
+
+set cscopequickfix=c-,d-,e-,g-,i-,s-,t-
+
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 "autocmd vimenter * !ctags -R --exclude=node_modules --exclude=static 2>&1 &
 "autocmd vimenter * !echo kensuke
@@ -223,8 +224,14 @@ nnoremap <leader>ds d^
 nnoremap <leader>de d$
 nnoremap <leader>ys y^
 nnoremap <leader>ye y$
+nnoremap <leader>syw "+yw
+nnoremap <leader>sys "+y^
+nnoremap <leader>sye "+y$
 nnoremap <leader>grl :Grep -i -r
 nnoremap <leader>gr :Grep -r
+nnoremap <leader>fc :cs find c
+nnoremap <leader>fg :cs find g
+nnoremap <silent> <leader>cw :cw<cr>
 nnoremap <c-v> <c-v>
 
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
@@ -248,6 +255,9 @@ let g:haskell_indent_case_alternative = 2
 
 let g:cabal_indent_section = 2
 
+let g:syntastic_python_flake8_config_file = '.flake8'
+
+let g:ale_python_pyflakes_executable = 'pyflakes3'
 let g:ale_sign_column_always = 1
 let g:ale_open_list = 1
 let g:ale_set_quickfix = 1
@@ -255,6 +265,7 @@ let g:ale_linters = {
             \'java': ['javac', 'javalsp', 'pmd'],
             \'D': ['dls', 'dmd', 'uncrustify'],
             \'javascript': ['eslint'],
+            \'python': ['flake8'],
             \}
 
 "for Python
