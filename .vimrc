@@ -9,7 +9,6 @@ filetype indent on
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType sml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
@@ -18,6 +17,7 @@ autocmd FileType sass,scss,css,styl,wxss setlocal tabstop=2 shiftwidth=2 softtab
 
 " syntax support
 autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
+autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
 syntax enable
 syntax on
@@ -28,7 +28,6 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 let g:rbpt_max = 16
-autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
 set scrolloff=0
 set cursorline cursorcolumn
@@ -272,6 +271,16 @@ let g:ale_linters = {
 nnoremap <leader>pyl :PymodeLint<cr>
 nnoremap <leader>pyf :PymodeLintAuto<cr>
 "let g:pymode_python='python2'
+
+"for golang
+nnoremap <leader>gob :GoBuild<cr>
+nnoremap <leader>gor :GoRun<cr>
+nnoremap <leader>got :GoTest<cr>
+nnoremap <leader>goc :GoCoverage<cr>
+nnoremap <leader>gof :GoFmt<cr>
+nnoremap <leader>gol :GoLint<cr>
+nnoremap <leader>goml :GoMetaLinter<cr>
+nnoremap <leader>god :GoDoc<cr>
 
 "input method
 "set noimdisable
