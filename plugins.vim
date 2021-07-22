@@ -57,7 +57,7 @@ Bundle 'elzr/vim-json'
 "
 Plugin 'valloric/youcompleteme'
 
-Plugin 'brookhong/cscope.vim'
+"Plugin 'brookhong/cscope.vim'
 "Plugin 'gtags.vim'
 
 " To use in col control.
@@ -125,17 +125,49 @@ Plugin 'neovimhaskell/haskell-vim'
 " for scala
 Plugin 'derekwyatt/vim-scala'
 
+" for typescript
+Plugin 'leafgarland/typescript-vim'
+
 " for docker
 Plugin 'ekalinin/dockerfile.vim'
 
 " for thrift
 Plugin 'solarnz/thrift.vim'
 
-" for antlr
+" for ANTLR
 Plugin 'jrozner/vim-antlr'
 
 " for yml
 Plugin 'henrik/vim-yaml-flattener'
+
+Plugin 'zxqfl/tabnine-vim'
+
+" for kotlin
+Plugin 'udalov/kotlin-vim'
+
+" for LLVM
+Plugin 'lyuts/vim-rtags'
+
+" for babel
+Plugin 'jbgutierrez/vim-babel'
+
+" for vue
+Plugin 'posva/vim-vue'
+
+" for graphviz
+Plugin 'wannesm/wmgraphviz.vim'
+
+" for agda
+Plugin 'derekelkins/agda-vim'
+
+"Plugin 'w0rp/ale'
+
+Plugin 'rhysd/vim-clang-format'
+
+Plugin 'uarun/vim-protobuf'
+
+Plugin 'integralist/vim-mypy'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
